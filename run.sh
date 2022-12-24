@@ -21,6 +21,8 @@ cd $WORK_DIR
 
 git clone https://github.com/andersonbrands/.anderb.git $WORK_DIR
 
+chmod +x $WORK_DIR/apps/*.sh
+
 source $WORK_DIR/apps/*.sh
 
 cd -
