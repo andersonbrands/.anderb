@@ -19,7 +19,7 @@ WORK_DIR=$(mktemp -d)
 
 cd $WORK_DIR
 
-git clone git@github.com:andersonbrands/.anderb.git .
+git clone https://github.com/andersonbrands/.anderb.git .
 
 source $WORK_DIR/apps/*.sh
 
