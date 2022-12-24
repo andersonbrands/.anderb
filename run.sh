@@ -1,15 +1,28 @@
 #!/usr/bin/env bash
 
+
+sudo apt update
+sudo apt-get update
+
+
 # install curl
 if ! hash curl &> /dev/null; then
-    echo "curl not found"
-    sudo apt install curl
+    sudo apt install -y curl
 fi
 
 # install git
 if ! hash git &> /dev/null; then
-    echo "git not found"
-    sudo apt install git
+    sudo apt install -y git
 fi
 
-echo "TODO: clone repo"
+WORK_DIR=$(mktemp -d)
+
+cd $WORK_DIR
+
+git clone git@github.com:andersonbrands/.anderb.git .
+
+source $WORK_DIR/apps/*.sh
+
+cd -
+
+rm $WORK_DIR -rf
