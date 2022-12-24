@@ -23,7 +23,9 @@ git clone https://github.com/andersonbrands/.anderb.git $WORK_DIR
 
 chmod +x $WORK_DIR/apps/*.sh
 
-source $WORK_DIR/apps/*.sh
+for f in $WORK_DIR/apps/*.sh; do
+    source $f
+done
 
 cd -
 
