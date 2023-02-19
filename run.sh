@@ -31,5 +31,3 @@ for f in $WORK_DIR/apps/*.sh; do
 done
 
 cd -
-
-rm $WORK_DIR -rf
