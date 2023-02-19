@@ -15,7 +15,10 @@ if ! hash git &> /dev/null; then
     sudo apt install -y git
 fi
 
-WORK_DIR=$(mktemp -d)
+
+WORK_DIR=~/dot/anderb
+
+mkdir -p $WORK_DIR
 
 cd $WORK_DIR
 
