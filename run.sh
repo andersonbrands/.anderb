@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 
 
+DISTRO_NAME="undefined"
+
+lsb_release --id | grep Ubuntu > /dev/null && DISTRO_NAME="ubuntu"
+lsb_release --id | grep Debian > /dev/null && DISTRO_NAME="debian"
+
+if [[ $DISTRO_NAME == "undefined" ]]; then
+    echo DISTO_NAME not in [\'debian\', \'ubuntu\']
+    return &>/dev/null || exit
+fi
+
+
 sudo apt update
 sudo apt-get update
 
