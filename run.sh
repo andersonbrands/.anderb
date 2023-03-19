@@ -1,13 +1,22 @@
 #!/usr/bin/env bash
 
 
-DISTRO_NAME="undefined"
+VALID_DISTROS="|debian|ubuntu|"
 
-lsb_release --id | grep Ubuntu > /dev/null && DISTRO_NAME="ubuntu"
-lsb_release --id | grep Debian > /dev/null && DISTRO_NAME="debian"
 
-if [[ $DISTRO_NAME == "undefined" ]]; then
-    echo DISTO_NAME not in [\'debian\', \'ubuntu\']
+if [[ ! $DISTRO_NAME ]]; then
+    if hash lsb_release &> /dev/null; then
+        lsb_release --id | grep Ubuntu > /dev/null && DISTRO_NAME="ubuntu"
+        lsb_release --id | grep Debian > /dev/null && DISTRO_NAME="debian"
+    else
+        cat /etc/*-release | grep ^NAME= | grep Ubuntu > /dev/null && DISTRO_NAME="ubuntu"
+        cat /etc/*-release | grep ^NAME= | grep Debian > /dev/null && DISTRO_NAME="debian"
+    fi
+fi
+
+
+if ! echo $VALID_DISTROS | grep "|$DISTRO_NAME|" > /dev/null; then
+    echo DISTRO_NAME \"$DISTRO_NAME\" not in \"$VALID_DISTROS\"
     return &>/dev/null || exit
 fi
 
