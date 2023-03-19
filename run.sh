@@ -33,3 +33,11 @@ fi
 for f in $WORK_DIR/apps/*.sh; do
     source $f
 done
+
+source ~/.bashrc
+
+pyenv install 3.10
+pyenv global 3.10
+
+source $WORK_DIR/res/pipx.sh
+source $WORK_DIR/res/pipx_stuff.sh
