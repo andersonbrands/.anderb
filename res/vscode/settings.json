@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "window.titleBarStyle": "custom",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[python]": {
+        "editor.formatOnType": true
+    }
+}

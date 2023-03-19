@@ -1,0 +1,21 @@
+{
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Visual Studio Light",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.multiCursorLimit": 20000,
+    "explorer.autoReveal": false,
+    "files.associations": {
+        "*.env": "properties",
+        "*.inx": "xml"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.foldingStrategy": "indentation",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.languageServer": "Jedi",
+    "files.exclude": {
+        "**/__pycache__": true
+    }
+}
