@@ -18,16 +18,18 @@ fi
 
 WORK_DIR=~/dot/anderb
 
-mkdir -p $WORK_DIR
 
-cd $WORK_DIR
-
-git clone https://github.com/andersonbrands/.anderb.git $WORK_DIR
-
-chmod +x $WORK_DIR/apps/*.sh
+if [[ -d $WORK_DIR ]]; then
+    if [[ -d $WORK_DIR/.git ]]; then
+        echo repo already on $(git -C $WORK_DIR rev-parse --abbrev-ref HEAD)
+    else
+        echo $WORK_DIR exists but is not a git repo
+        return &>/dev/null || exit
+    fi
+else
+    git clone https://github.com/andersonbrands/.anderb.git $WORK_DIR
+fi
 
 for f in $WORK_DIR/apps/*.sh; do
     source $f
 done
-
-cd -

@@ -37,5 +37,5 @@ if ! hash docker &> /dev/null; then
     #      "max-file": "5" 
     #   }
     # }
-    cat res/daemon.json > /etc/docker/daemon.json
+    cat $WORK_DIR/res/daemon.json > /etc/docker/daemon.json
 fi
