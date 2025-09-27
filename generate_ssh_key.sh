@@ -38,7 +38,7 @@ fi
 
 echo
 echo "All good, you can now copy the contents of"
-echo "~/.ssh.id_ed25519.pub"
+echo "~/.ssh/id_ed25519.pub"
 dashes
 cat ~/.ssh/id_ed25519.pub
 dashes
